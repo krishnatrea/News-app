@@ -45,7 +45,6 @@ class NewsTile extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-<<<<<<< HEAD
                 Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: Text(
@@ -56,18 +55,6 @@ class NewsTile extends StatelessWidget {
                       fontFamily: "VarelaRound",
                       fontWeight: FontWeight.bold,
                     ),
-=======
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Text(
-                  news.title,
-                  maxLines: 3,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: "Roboto",
-                    fontWeight: FontWeight.bold,
->>>>>>> 77e865d31bffca1b0c79cd54960593b5b80a2550
                   ),
                 ),
                 Padding(
