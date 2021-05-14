@@ -2,13 +2,13 @@
 
 -   Some Snapshots :
 
--   ![alt text](ss\Screenshot_1621026349.png)
+-   ![alt text](ss/s1.png)
 
--   ![alt text](ss\Screenshot_1621026374.png)
+-   ![alt text](ss/s2.png)
 
--   ![alt text](ss\Screenshot_1621026382.png)
+-   ![alt text](ss/s3.png)
 
--   ![alt text](ss\Screenshot_1621026391.png)
+-   ![alt text](ss/s4.png)
 
--   ![alt text](ss\Screenshot_1621026400.png)
+-   ![alt text](ss/s5.png)
 
