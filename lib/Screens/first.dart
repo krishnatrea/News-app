@@ -40,7 +40,7 @@ class _FirstState extends State<First> {
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("fonts/news.jpg"),
+              image: AssetImage("assets/image/news.jpg"),
               fit: BoxFit.cover,
             ),
           ),

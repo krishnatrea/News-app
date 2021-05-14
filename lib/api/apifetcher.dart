@@ -5,7 +5,7 @@ import 'dart:convert';
 
 class FetchApi {
   static const String baseapi = "newsapi.org";
-  static const String apikeybinding = "Your API";
+  static const String apikeybinding = "Your API key";
 
   Future<List<News>> fatchingapis(
       {@required String endpoint, @required Map<String, dynamic> quary}) async {
