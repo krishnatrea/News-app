@@ -39,7 +39,7 @@ class NewsTile extends StatelessWidget {
                   maxLines: 3,
                   style: TextStyle(
                     fontSize: 20,
-                    fontFamily: "VarelaRound",
+                    fontFamily: "Roboto",
                     fontWeight: FontWeight.bold,
                   ),
                 ),

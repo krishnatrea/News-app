@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:newsapi/api/apifetcher.dart';
 import 'package:newsapi/model/catagories.dart';
 import 'package:newsapi/model/countrycods.dart';
@@ -40,25 +41,35 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: [
               Container(
                 height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(icon: Icon(Icons.person), onPressed: () {}),
-                    Text(
-                      "FLUTTER NEWS",
-                      style: TextStyle(
-                        fontFamily: "VarelaRound",
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    IconButton(
+                      icon: Icon(Icons.person),
+                      onPressed: () {},
                     ),
-                    IconButton(icon: Icon(Icons.search), onPressed: () {}),
+                    Text("FLUTTER NEWS",
+                        style: TextStyle(
+                          fontFamily: "Roboto",
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    IconButton(
+                      icon: Icon(Icons.search),
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ),
@@ -70,6 +81,10 @@ class _HomeState extends State<Home> {
                   : Container(
                       height: MediaQuery.of(context).size.height - 80,
                       width: double.infinity,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30),
+                              topRight: Radius.circular(30))),
                       child: GridView.count(
                         crossAxisCount: 1,
                         children: List.generate(
