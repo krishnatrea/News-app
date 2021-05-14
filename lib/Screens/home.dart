@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:newsapi/Colors/colors.dart';
+=======
+import 'package:flutter/rendering.dart';
+>>>>>>> 77e865d31bffca1b0c79cd54960593b5b80a2550
 import 'package:newsapi/api/apifetcher.dart';
 import 'package:newsapi/model/catagories.dart';
 import 'package:newsapi/model/newsclass.dart';
@@ -45,6 +49,9 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
           child: Stack(
@@ -61,6 +68,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
               Container(
+<<<<<<< HEAD
                 margin: EdgeInsets.all(10),
                 height: 60,
                 width: double.infinity,
@@ -73,10 +81,16 @@ class _HomeState extends State<Home> {
                       blurRadius: 5.0,
                     ),
                   ],
+=======
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+>>>>>>> 77e865d31bffca1b0c79cd54960593b5b80a2550
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
+<<<<<<< HEAD
                     IconButton(icon: Icon(Icons.person), onPressed: () {}),
                     Text(
                       "FLUTTER NEWS",
@@ -85,11 +99,50 @@ class _HomeState extends State<Home> {
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
+=======
+                    IconButton(
+                      icon: Icon(Icons.person),
+                      onPressed: () {},
                     ),
-                    IconButton(icon: Icon(Icons.search), onPressed: () {}),
+                    Text("FLUTTER NEWS",
+                        style: TextStyle(
+                          fontFamily: "Roboto",
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    IconButton(
+                      icon: Icon(Icons.search),
+                      onPressed: () {},
+>>>>>>> 77e865d31bffca1b0c79cd54960593b5b80a2550
+                    ),
                   ],
                 ),
               ),
+<<<<<<< HEAD
+=======
+              SizedBox(
+                height: 10,
+              ),
+              isloading
+                  ? CircularProgressIndicator()
+                  : Container(
+                      height: MediaQuery.of(context).size.height - 80,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30),
+                              topRight: Radius.circular(30))),
+                      child: GridView.count(
+                        crossAxisCount: 1,
+                        children: List.generate(
+                          7,
+                          (index) => NewsTile(
+                            news: news[index],
+                          ),
+                        ),
+                      ),
+                    ),
+>>>>>>> 77e865d31bffca1b0c79cd54960593b5b80a2550
             ],
           ),
         ),
