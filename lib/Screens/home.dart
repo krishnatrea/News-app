@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:newsapi/api/apifetcher.dart';
 import 'package:newsapi/model/catagories.dart';
+import 'package:newsapi/model/countrycods.dart';
 import 'package:newsapi/model/newsclass.dart';
 import 'package:newsapi/widget/appBarfornews.dart';
 import 'package:newsapi/widget/navbar.dart';
@@ -22,7 +23,7 @@ class _HomeState extends State<Home> {
   void fatchapi() async {
     isloading = true;
     Map<String, String> quary = {
-      " country": "in",
+      " country": enumCountrytostring(Country.us),
       "category": enumCatagriestoString(newcatagory),
     };
     await fetchApi.fatchingapis(endpoint: endpoint, quary: quary).then((value) {
