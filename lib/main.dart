@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:newsapi/Screens/first.dart';
-import 'Screens/home.dart';
 
 void main() {
   runApp(

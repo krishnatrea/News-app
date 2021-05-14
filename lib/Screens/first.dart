@@ -18,7 +18,7 @@ class _FirstState extends State<First> {
 
   @override
   setTime() async {
-    var duration = Duration(seconds: 4);
+    var duration = Duration(seconds: 1);
     return Timer(duration, route);
   }
 

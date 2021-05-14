@@ -3,8 +3,9 @@ import 'package:flutter/rendering.dart';
 import 'package:newsapi/api/apifetcher.dart';
 import 'package:newsapi/model/catagories.dart';
 import 'package:newsapi/model/newsclass.dart';
+import 'package:newsapi/widget/appBarfornews.dart';
+import 'package:newsapi/widget/navbar.dart';
 import 'package:newsapi/widget/newstile.dart';
-import 'package:newsapi/Colors/colors.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -38,6 +39,26 @@ class _HomeState extends State<Home> {
     fatchapi();
   }
 
+  onTapFunction(value) {
+    currentindex = value;
+    switch (value) {
+      case 0:
+        newcatagory = Catagories.general;
+        break;
+      case 1:
+        newcatagory = Catagories.business;
+        break;
+      case 2:
+        newcatagory = Catagories.health;
+        break;
+      case 3:
+        newcatagory = Catagories.science;
+    }
+    fatchapi();
+
+    setState(() {});
+  }
+
   var currentindex = 0;
   @override
   Widget build(BuildContext context) {
@@ -51,8 +72,9 @@ class _HomeState extends State<Home> {
           ),
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
-          child: Stack(
+          child: Column(
             children: [
+              AppBarForNews(currentindex: currentindex),
               isloading
                   ? Center(child: CircularProgressIndicator())
                   : Expanded(
@@ -64,84 +86,13 @@ class _HomeState extends State<Home> {
                                 news: news[index], currentindex: currentindex)),
                       ),
                     ),
-              Container(
-                margin: EdgeInsets.all(10),
-                height: 60,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.white,
-                  boxShadow: [
-                    new BoxShadow(
-                      color: colors[currentindex],
-                      blurRadius: 5.0,
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    IconButton(icon: Icon(Icons.person), onPressed: () {}),
-                    Text(
-                      "FLUTTER NEWS",
-                      style: TextStyle(
-                        fontFamily: "VarelaRound",
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (value) {
-          currentindex = value;
-          switch (value) {
-            case 0:
-              newcatagory = Catagories.general;
-              break;
-            case 1:
-              newcatagory = Catagories.business;
-              break;
-            case 2:
-              newcatagory = Catagories.health;
-              break;
-            case 3:
-              newcatagory = Catagories.science;
-          }
-          fatchapi();
-
-          setState(() {});
-        },
-        currentIndex: currentindex,
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.black,
-              ),
-              label: "Home",
-              backgroundColor: colors[currentindex]),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business, color: Colors.black),
-            label: "Business",
-            backgroundColor: colors[currentindex],
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_hospital, color: Colors.black),
-            label: "Health",
-            backgroundColor: colors[currentindex],
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.science, color: Colors.black),
-            label: "Science",
-            backgroundColor: colors[currentindex],
-          ),
-        ],
+      bottomNavigationBar: BottomNavo(
+        currentindex: currentindex,
+        onTapFunction: onTapFunction,
       ),
     );
   }
